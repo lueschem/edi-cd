@@ -31,4 +31,8 @@
   ansible.builtin.set_fact:
     device_type: "{{ device_inventory | community.general.json_query('json.attributes[?name==`device_type`].value') | first }}"
     applied_branch: "{{ git_rev_parse_output.stdout }}"
+    subscribed_branch: "{{ device_inventory | community.general.json_query('json.attributes[?name==`subscribed_branch`].value') | first | default(subscribed_branch) }}"
 
+- name: Print summary.
+  ansible.builtin.debug:
+    msg: "subscribed branch: {{ subscribed_branch }}, applied branch: {{ applied_branch }}, device type: {{ device_type }}"
