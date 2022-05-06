@@ -1,0 +1,9 @@
+---
+- name: Apply OS and configuration to fleet.
+  hosts: all
+  gather_facts: no
+
+  roles:
+    - role: gather_fleet_facts
+    - role: install_os
+      when: subscribed_branch == applied_branch

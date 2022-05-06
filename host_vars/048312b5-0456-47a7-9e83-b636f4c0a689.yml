@@ -1,0 +1,8 @@
+---
+subscribed_branch: develop
+
+configuration:
+  template: foo-bar.yml
+  parameters:
+    kiosk_url: https://www.example.com
+    user: foo

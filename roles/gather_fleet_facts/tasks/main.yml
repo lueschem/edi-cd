@@ -1,0 +1,34 @@
+---
+- name: Get current git branch.
+  command: git rev-parse --abbrev-ref HEAD
+  register: git_rev_parse_output
+  run_once: True
+  delegate_to: 127.0.0.1
+  changed_when: False
+
+- name: Login to the Mender server.
+  ansible.builtin.uri:
+    url: "{{ mender_server }}/api/management/v1/useradm/auth/login"
+    method: POST
+    user: '{{ lookup("env", "MENDER_USER") }}'
+    password: '{{ lookup("env", "MENDER_PASSWORD") }}'
+    force_basic_auth: yes
+  register: mender_token
+  run_once: True
+  delegate_to: 127.0.0.1
+
+- name: Fetch device inventory.
+  ansible.builtin.uri:
+    url: "{{ mender_server }}/api/management/v1/inventory/devices/{{ inventory_hostname }}"
+    method: GET
+    headers:
+      Accept: application/json
+      Authorization: Bearer {{ mender_token.cookies.JWT }}
+  register: device_inventory
+  delegate_to: 127.0.0.1
+
+- name: Set facts for devices.
+  ansible.builtin.set_fact:
+    device_type: "{{ device_inventory | community.general.json_query('json.attributes[?name==`device_type`].value') | first }}"
+    applied_branch: "{{ git_rev_parse_output.stdout }}"
+

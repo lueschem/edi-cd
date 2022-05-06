@@ -1,0 +1,17 @@
+all:
+  children:
+    pi4:
+      hosts:
+        b8b311de-000e-4914-9a13-1d7e2e23bc5d: # GitHub runner
+        3fb4632b-96b9-475d-ac89-02255bd15b6f:
+    pi3:
+      hosts:
+    pi2:
+      hosts:
+        048312b5-0456-47a7-9e83-b636f4c0a689:
+    iot-gate-imx8:
+      hosts:
+        5ef8c955-4f87-4243-adcd-160f70c3c45e:
+    var-som-mx8m-nano:
+      hosts:
+        ed531b64-5108-4f1d-9879-f39f56054078:

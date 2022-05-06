@@ -1,0 +1,8 @@
+---
+
+- name: Apply OS update.
+  ansible.builtin.debug:
+    msg: "Applying {{ os_image | community.general.json_query(os_image_query) }}"
+  vars:
+    os_image_query: "[?device_type==`{{ device_type }}`].image_name"
+
