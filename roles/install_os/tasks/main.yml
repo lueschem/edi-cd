@@ -2,13 +2,14 @@
 
 - name: Set facts for OS update.
   ansible.builtin.set_fact:
-    os_image_name: "{{ os_image | community.general.json_query(os_image_query) | first  }}"
+    desired_os_image: "{{ os_image | community.general.json_query(os_image_query) | first  }}"
   vars:
     os_image_query: "[?device_type==`{{ device_type }}`].image_name"
 
 - name: Announce OS update.
   ansible.builtin.debug:
-    msg: "Updating to {{ os_image_name }}, device type: {{ device_type }}"
+    msg: "Updating OS image from {{ reported_os_image }} to {{ desired_os_image }}."
+  when: desired_os_image != reported_os_image
 
 - name: Apply OS update.
   ansible.builtin.uri:
@@ -22,3 +23,4 @@
     status_code: 201
   delegate_to: 127.0.0.1
   changed_when: True
+  when: desired_os_image != reported_os_image

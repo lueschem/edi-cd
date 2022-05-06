@@ -46,6 +46,7 @@
     applied_branch: "{{ git_rev_parse_output.stdout }}"
     subscribed_branch: "{{ device_inventory | community.general.json_query('json.attributes[?name==`subscribed_branch`].value') | first | default(subscribed_branch) }}"
     reported_configuration: "{{ device_configuration.json.reported | default('{}') }}"
+    reported_os_image: "{{ device_inventory | community.general.json_query('json.attributes[?name==`rootfs-image.version`].value') | first | default('unknown') }}"
 
 - name: Print facts summary.
   ansible.builtin.debug:
