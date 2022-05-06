@@ -7,3 +7,5 @@
     - role: gather_fleet_facts
     - role: install_os
       when: subscribed_branch == applied_branch
+    - role: apply_configuration
+      when: configuration.template is defined

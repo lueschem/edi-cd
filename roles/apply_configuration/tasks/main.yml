@@ -1,0 +1,11 @@
+---
+
+- name: Render desired configuration.
+  ansible.builtin.set_fact:
+    desired_configuration: "{{ lookup('template', configuration.template)  }}"
+
+- name: Announce configuration upgrade.
+  ansible.builtin.debug:
+    msg: "Going to upgrade configuration."
+  when:
+    reported_configuration != desired_configuration
