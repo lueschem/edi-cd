@@ -9,9 +9,9 @@ all:
     pi2:
       hosts:
         048312b5-0456-47a7-9e83-b636f4c0a689:
-    iot-gate-imx8:
+    iot_gate_imx8:
       hosts:
         5ef8c955-4f87-4243-adcd-160f70c3c45e:
-    var-som-mx8m-nano:
+    var_som_mx8m_nano:
       hosts:
         ed531b64-5108-4f1d-9879-f39f56054078:
