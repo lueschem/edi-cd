@@ -27,12 +27,26 @@
   register: device_inventory
   delegate_to: 127.0.0.1
 
+- name: Fetch device configuration.
+  ansible.builtin.uri:
+    url: "{{ mender_server }}/api/management/v1/deviceconfig/configurations/device/{{ inventory_hostname }}"
+    method: GET
+    headers:
+      Accept: application/json
+      Authorization: Bearer {{ mender_token.cookies.JWT }}
+    status_code:
+      - 200
+      - 404 # happens if the device is offline
+  register: device_configuration
+  delegate_to: 127.0.0.1
+
 - name: Set facts for devices.
   ansible.builtin.set_fact:
     device_type: "{{ device_inventory | community.general.json_query('json.attributes[?name==`device_type`].value') | first }}"
     applied_branch: "{{ git_rev_parse_output.stdout }}"
     subscribed_branch: "{{ device_inventory | community.general.json_query('json.attributes[?name==`subscribed_branch`].value') | first | default(subscribed_branch) }}"
+    reported_configuration: "{{ device_configuration.json.reported | default('{}') }}"
 
-- name: Print summary.
+- name: Print facts summary.
   ansible.builtin.debug:
     msg: "subscribed branch: {{ subscribed_branch }}, applied branch: {{ applied_branch }}, device type: {{ device_type }}"
