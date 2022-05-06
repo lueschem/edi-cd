@@ -1,0 +1,5 @@
+{
+  "name": "{{ 999999999999999999999 | random | to_uuid }}",
+  "artifact_name": "{{ os_image_name }}",
+  "devices": ["{{ inventory_hostname }}"]
+}
