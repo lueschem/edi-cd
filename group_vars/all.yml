@@ -1,6 +1,6 @@
 ---
 mender_server: "https://hosted.mender.io"
-subscribed_branch: fleet
+subscribed_branch: production
 
 os_image:
   - device_type: pi2-armhf
