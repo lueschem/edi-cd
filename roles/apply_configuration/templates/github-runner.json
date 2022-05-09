@@ -1,0 +1,8 @@
+{
+  "playbook_url": "https://github.com/lueschem/edi-gh-actions-runner-playbook.git",
+  "playbook_version": "main",
+  "github_account": "{{ configuration.parameters.github_account }}",
+  "github_repo": "{{ configuration.parameters.github_repo }}",
+  "access_token": "{{ configuration.parameters.access_token }}",
+  "reinstall_runner": "yes" 
+}
