@@ -2,12 +2,17 @@
 
 - name: Render desired configuration.
   ansible.builtin.set_fact:
-    desired_configuration: "{{ lookup('template', configuration.template)  }}"
+    desired_configuration: "{{ lookup('template', configuration.template) }}"
 
 - name: Announce configuration upgrade.
   ansible.builtin.debug:
     msg: "Applying template {{ configuration.template }}."
   when: reported_configuration != desired_configuration
+
+- name: Show detailed configuration change.
+  ansible.builtin.debug:
+    msg: "Configuration: {{ reported_configuration }} --> {{ desired_configuration }}."
+  when: reported_configuration != desired_configuration and playbook_mode == "dry-run-debug"
 
 - name: Set device configuration.
   ansible.builtin.uri:
@@ -21,7 +26,7 @@
     status_code: 204
   delegate_to: 127.0.0.1
   changed_when: True
-  when: reported_configuration != desired_configuration
+  when: reported_configuration != desired_configuration and playbook_mode == "run"
 
 - name: Deploy device configuration.
   ansible.builtin.uri:
@@ -34,4 +39,4 @@
     body: "{}"
   delegate_to: 127.0.0.1
   changed_when: True
-  when: reported_configuration != desired_configuration
+  when: reported_configuration != desired_configuration and playbook_mode == "run"

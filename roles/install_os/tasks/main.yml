@@ -23,4 +23,4 @@
     status_code: 201
   delegate_to: 127.0.0.1
   changed_when: True
-  when: desired_os_image != reported_os_image
+  when: desired_os_image != reported_os_image and playbook_mode == "run"
