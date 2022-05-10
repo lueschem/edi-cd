@@ -20,4 +20,4 @@ Attention: `dry-run-debug` might reveal sensitive information. Use this mode onl
 
 `MENDER_PASSWORD`: the Mender password
 
-`GITHUB_ACCESS_TOKEN`: the GitHub access token (with repo scope) for GitHub Actions runners
+`RUNNER_ACCESS_TOKEN`: the GitHub access token (with repo scope) for GitHub Actions runners

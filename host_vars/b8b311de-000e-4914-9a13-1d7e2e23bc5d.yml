@@ -4,4 +4,4 @@ configuration:
   parameters:
     github_account: lueschem
     github_repo: edi-ci-cd
-    access_token: "{{ lookup('env', 'GITHUB_ACCESS_TOKEN') }}"
+    access_token: "{{ lookup('env', 'RUNNER_ACCESS_TOKEN') }}"
