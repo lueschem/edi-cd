@@ -3,6 +3,6 @@
   "playbook_version": "main",
   "github_account": "{{ configuration.parameters.github_account | mandatory }}",
   "github_repo": "{{ configuration.parameters.github_repo | mandatory }}",
-  "access_token": "{{ configuration.parameters.access_token | mandatory }}",
+  "access_token": "{{ (configuration.parameters.access_token if (configuration.parameters.access_token | length > 0)) | mandatory('The GitHub access token must not be empty!') }}",
   "reinstall_runner": "yes" 
 }
