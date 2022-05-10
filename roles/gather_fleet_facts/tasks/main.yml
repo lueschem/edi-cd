@@ -6,6 +6,12 @@
   delegate_to: 127.0.0.1
   changed_when: False
 
+- name: Make sure that the required Mender environment variables are set.
+  assert:
+    that: lookup("env", "MENDER_USER") != "" and lookup("env", "MENDER_PASSWORD") != ""
+    msg: "The environment variables MENDER_USER and MENDER_PASSWORD are required for this playbook."
+  run_once: True
+
 - name: Login to the Mender server.
   ansible.builtin.uri:
     url: "{{ mender_server }}/api/management/v1/useradm/auth/login"
