@@ -6,6 +6,7 @@ all:
         3fb4632b-96b9-475d-ac89-02255bd15b6f:
     pi3:
       hosts:
+        50a28c2e-3ee8-4559-a5b9-3ce47c881c5d:
     pi2:
       hosts:
         048312b5-0456-47a7-9e83-b636f4c0a689:
