@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Check out the fleet management playbook
         uses: actions/checkout@v3
+      - name: Install prerequisites
+        run: sudo apt install python3-jmespath
       - name: Run the fleet management playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
