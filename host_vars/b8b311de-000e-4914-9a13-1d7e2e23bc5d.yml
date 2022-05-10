@@ -1,6 +1,4 @@
 ---
-subscribed_branch: develop
-
 configuration:
   template: github-runner.json
   parameters:
