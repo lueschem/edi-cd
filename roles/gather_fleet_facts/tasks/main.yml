@@ -22,6 +22,7 @@
   register: mender_token
   run_once: True
   delegate_to: 127.0.0.1
+  no_log: True
 
 - name: Fetch device inventory.
   ansible.builtin.uri:
