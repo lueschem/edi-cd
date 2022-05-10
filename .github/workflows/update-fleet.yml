@@ -1,0 +1,20 @@
+name: update fleet
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out the fleet management playbook
+        uses: actions/checkout@v3
+      - name: Run the fleet management playbook
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: manage-fleet.yml
+          options: --inventory inventory.yml
+        env:
+          MENDER_USER: ${{ secrets.MENDER_USER }}
+          MENDER_PASSWORD: ${{ secrets.MENDER_PASSWORD }}
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          PLAYBOOK_MODE: run
