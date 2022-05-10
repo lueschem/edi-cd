@@ -1,10 +1,6 @@
 ---
 subscribed_branch: develop
 
-os_image:
-  - device_type: pi4-v3-arm64
-    image_name: 2022-03-25-1844-pi4-bullseye-arm64-gitops
-
 configuration:
   template: kiosk.json
   parameters:
