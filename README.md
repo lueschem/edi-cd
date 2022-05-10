@@ -9,7 +9,7 @@ export MENDER_PASSWORD=MY_MENDER_PASSWORD
 export GITHUB_ACCESS_TOKEN=ghp_XYZ
 export PLAYBOOK_MODE=run # run=apply changes, dry-run=simulate changes (default), dry-run-debug=simulate changes and show debug information
 git checkout BRANCH_XY
-ansible-playbook manage-fleet.yml -i inventory.yaml
+ansible-playbook manage-fleet.yml -i inventory.yml
 ```
 
 Attention: `dry-run-debug` might reveal sensitive information. Use this mode only locally.
