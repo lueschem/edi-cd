@@ -1,5 +1,5 @@
 ---
-subscribed_branch: develop
+subscribed_branch: main
 
 configuration:
   template: kiosk.json
