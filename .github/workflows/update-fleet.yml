@@ -8,8 +8,10 @@ jobs:
     steps:
       - name: Check out the fleet management playbook
         uses: actions/checkout@v3
-      - name: Install prerequisites
-        run: sudo apt install python3-jmespath
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        with:
+          limit-access-to-actor: true
       - name: Run the fleet management playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
