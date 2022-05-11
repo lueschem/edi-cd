@@ -1,0 +1,26 @@
+---
+
+- name: Set facts for OS update.
+  ansible.builtin.set_fact:
+    desired_os_image: "{{ os_image | community.general.json_query(os_image_query) | first  }}"
+  vars:
+    os_image_query: "[?device_type==`{{ device_type }}`].image_name"
+
+- name: Announce OS update.
+  ansible.builtin.debug:
+    msg: "Updating OS image from {{ reported_os_image }} to {{ desired_os_image }}."
+  when: desired_os_image != reported_os_image
+
+- name: Apply OS update.
+  ansible.builtin.uri:
+    url: "{{ mender_server }}/api/management/v1/deployments/deployments"
+    method: POST
+    headers:
+      Accept: application/json
+      Authorization: Bearer {{ mender_token.cookies.JWT }}
+    body_format: json
+    body: "{{ lookup('template','os-update.json') }}"
+    status_code: 201
+  delegate_to: 127.0.0.1
+  changed_when: True
+  when: desired_os_image != reported_os_image and playbook_mode == "run"

@@ -1,0 +1,21 @@
+---
+- name: Apply OS and configuration to fleet.
+  hosts: all
+  gather_facts: no
+
+  pre_tasks:
+    - name: Check for minimum required Ansible version (>=2.10).
+      assert:
+        that: "ansible_version.full is version_compare('2.10', '>=')"
+        msg: "Ansible >= 2.10 is required for this playbook."
+      run_once: True
+
+  vars:
+    playbook_mode: "{{ lookup('env', 'PLAYBOOK_MODE') | default('dry-run') }}"
+
+  roles:
+    - role: gather_fleet_facts
+    - role: install_os
+      when: subscribed_branch == applied_branch
+    - role: apply_configuration
+      when: subscribed_branch == applied_branch and configuration.template is defined
