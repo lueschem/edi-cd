@@ -8,10 +8,10 @@ jobs:
     steps:
       - name: Check out the fleet management playbook
         uses: actions/checkout@v3
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-        with:
-          limit-access-to-actor: true
+      - name: Install jmespath into venv of ansible-core
+        run: |
+          source /opt/pipx/venvs/ansible-core/bin/activate
+          python3 -m pip install jmespath
       - name: Run the fleet management playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
