@@ -12,4 +12,4 @@ os_image:
   - device_type: var-som-mx8m-nano-arm64-v2
     image_name: 2022-05-18-0710-var-som-mx8m-nano-bullseye-arm64
   - device_type: iot-gate-imx8-arm64-v2
-    image_name: 2022-05-18-0633-iot-gate-imx8-bullseye-arm64
+    image_name: 2022-06-08-1357-iot-gate-imx8-bullseye-arm64
