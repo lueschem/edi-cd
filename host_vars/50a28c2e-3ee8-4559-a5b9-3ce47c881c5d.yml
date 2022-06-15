@@ -4,4 +4,4 @@ subscribed_branch: main
 configuration:
   template: kiosk.json
   parameters:
-    kiosk_url: https://www.kone.com
+    kiosk_url: https://www.schindler.com
