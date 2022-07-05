@@ -3,5 +3,5 @@ configuration:
   template: github-runner.json
   parameters:
     github_account: lueschem
-    github_repo: edi-ci-cd
+    github_repo: edi-ci
     access_token: "{{ lookup('env', 'RUNNER_ACCESS_TOKEN') }}"
