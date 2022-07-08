@@ -7,7 +7,7 @@ GitOps inspired fleet management for embedded devices.
 ``` bash
 export MENDER_USER=MY_MENDER_LOGIN
 export MENDER_PASSWORD=MY_MENDER_PASSWORD
-export GITHUB_ACCESS_TOKEN=ghp_XYZ
+export RUNNER_ACCESS_TOKEN=ghp_XYZ
 export PLAYBOOK_MODE=run # run=apply changes, dry-run=simulate changes (default), dry-run-debug=simulate changes and show debug information
 git checkout BRANCH_XY
 ansible-playbook manage-fleet.yml -i inventory.yml

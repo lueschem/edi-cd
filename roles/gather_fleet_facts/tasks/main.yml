@@ -2,15 +2,15 @@
 - name: Get current git branch.
   command: git rev-parse --abbrev-ref HEAD
   register: git_rev_parse_output
-  run_once: True
+  run_once: true
   delegate_to: 127.0.0.1
-  changed_when: False
+  changed_when: false
 
 - name: Make sure that the required Mender environment variables are set.
   assert:
     that: lookup("env", "MENDER_USER") != "" and lookup("env", "MENDER_PASSWORD") != ""
     msg: "The environment variables MENDER_USER and MENDER_PASSWORD are required for this playbook."
-  run_once: True
+  run_once: true
 
 - name: Login to the Mender server.
   ansible.builtin.uri:
@@ -18,11 +18,11 @@
     method: POST
     user: '{{ lookup("env", "MENDER_USER") }}'
     password: '{{ lookup("env", "MENDER_PASSWORD") }}'
-    force_basic_auth: yes
+    force_basic_auth: true
   register: mender_token
-  run_once: True
+  run_once: true
   delegate_to: 127.0.0.1
-  no_log: True
+  no_log: true
 
 - name: Fetch device inventory.
   ansible.builtin.uri:

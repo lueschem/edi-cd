@@ -1,14 +1,14 @@
 ---
 - name: Apply OS and configuration to fleet.
   hosts: all
-  gather_facts: no
+  gather_facts: false
 
   pre_tasks:
     - name: Check for minimum required Ansible version (>=2.10).
       assert:
         that: "ansible_version.full is version_compare('2.10', '>=')"
         msg: "Ansible >= 2.10 is required for this playbook."
-      run_once: True
+      run_once: true
 
   vars:
     playbook_mode: "{{ lookup('env', 'PLAYBOOK_MODE') | default('dry-run') }}"
