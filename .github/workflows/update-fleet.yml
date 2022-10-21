@@ -19,7 +19,6 @@ jobs:
           playbook: manage-fleet.yml
           options: --inventory inventory.yml
         env:
-          MENDER_USER: ${{ secrets.MENDER_USER }}
-          MENDER_PASSWORD: ${{ secrets.MENDER_PASSWORD }}
+          MENDER_ACCESS_TOKEN: ${{ secrets.MENDER_ACCESS_TOKEN }}
           RUNNER_ACCESS_TOKEN: ${{ secrets.RUNNER_ACCESS_TOKEN }}
           PLAYBOOK_MODE: run

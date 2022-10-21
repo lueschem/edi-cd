@@ -8,8 +8,14 @@
 
 - name: Make sure that the required Mender environment variables are set.
   assert:
-    that: lookup("env", "MENDER_USER") != "" and lookup("env", "MENDER_PASSWORD") != ""
-    msg: "The environment variables MENDER_USER and MENDER_PASSWORD are required for this playbook."
+    that: (lookup("env", "MENDER_USER") != "" and lookup("env", "MENDER_PASSWORD") != "") or lookup("env", "MENDER_ACCESS_TOKEN") != ""
+    msg: "The environment variables (MENDER_USER and MENDER_PASSWORD) or MENDER_ACCESS_TOKEN are required for this playbook."
+  run_once: true
+
+- name: Retrieve Mender access token from environment.
+  ansible.builtin.set_fact:
+    mender_access_token: '{{ lookup("env", "MENDER_ACCESS_TOKEN") }}'
+  no_log: true
   run_once: true
 
 - name: Login to the Mender server.
@@ -19,10 +25,18 @@
     user: '{{ lookup("env", "MENDER_USER") }}'
     password: '{{ lookup("env", "MENDER_PASSWORD") }}'
     force_basic_auth: true
-  register: mender_token
+  register: mender_login_response
   run_once: true
   delegate_to: 127.0.0.1
   no_log: true
+  when: mender_access_token == ""
+
+- name: Extract token from Mender login response.
+  ansible.builtin.set_fact:
+    mender_access_token: '{{ mender_login_response.cookies.JWT }}'
+  no_log: true
+  run_once: true
+  when: mender_access_token == ""
 
 - name: Fetch device inventory.
   ansible.builtin.uri:
@@ -30,7 +44,7 @@
     method: GET
     headers:
       Accept: application/json
-      Authorization: Bearer {{ mender_token.cookies.JWT }}
+      Authorization: Bearer {{ mender_access_token }}
   register: device_inventory
   delegate_to: 127.0.0.1
 
@@ -40,7 +54,7 @@
     method: GET
     headers:
       Accept: application/json
-      Authorization: Bearer {{ mender_token.cookies.JWT }}
+      Authorization: Bearer {{ mender_access_token }}
     status_code:
       - 200
       - 404 # happens if the device is offline
