@@ -21,7 +21,7 @@
     method: POST
     headers:
       Accept: application/json
-      Authorization: Bearer {{ mender_token.cookies.JWT }}
+      Authorization: Bearer {{ mender_access_token }}
     body_format: json
     body: "{{ lookup('template','os-update.json') }}"
     status_code: 201
