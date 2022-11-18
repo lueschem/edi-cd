@@ -4,12 +4,12 @@ subscribed_branch: production
 
 os_image:
   - device_type: pi2-armhf
-    image_name: 2022-07-08-1050-pi2-bullseye-armhf
+    image_name: 2022-11-18-1341-pi2-bullseye-armhf
   - device_type: pi3-arm64
-    image_name: 2022-07-08-0859-pi3-bullseye-arm64-gitops
+    image_name: 2022-11-18-1247-pi3-bullseye-arm64-gitops
   - device_type: pi4-v3-arm64
-    image_name: 2022-10-22-2130-pi4-bullseye-arm64-gitops
+    image_name: 2022-11-18-1051-pi4-bullseye-arm64-gitops
   - device_type: var-som-mx8m-nano-arm64-v2
-    image_name: 2022-07-08-1129-var-som-mx8m-nano-bullseye-arm64
+    image_name: 2022-11-18-2104-var-som-mx8m-nano-bullseye-arm64
   - device_type: iot-gate-imx8-arm64-v2
-    image_name: 2022-10-22-0820-iot-gate-imx8-bullseye-arm64
+    image_name: 2022-11-18-1134-iot-gate-imx8-bullseye-arm64
