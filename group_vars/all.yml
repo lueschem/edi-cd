@@ -6,7 +6,7 @@ os_image:
   - device_type: pi2-armhf
     image_name: 2022-11-18-1341-pi2-bullseye-armhf
   - device_type: pi3-arm64
-    image_name: 2023-03-08-1515-pi3-gitops-bookworm-arm64
+    image_name: 2023-03-10-1104-pi3-gitops-bookworm-arm64
   - device_type: pi4-v3-arm64
     image_name: 2023-03-10-1348-pi4-gitops-bookworm-arm64
   - device_type: var-som-mx8m-nano-arm64-v2
