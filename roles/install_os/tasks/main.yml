@@ -17,7 +17,7 @@
 
 - name: Abort previous deployments.
   ansible.builtin.uri:
-    url: "{{ mender_server }}/api/management/v1/deployments/devices/{{ inventory_hostname }}"
+    url: "{{ mender_server }}/api/management/v1/deployments/deployments/devices/{{ inventory_hostname }}"
     method: DELETE
     headers:
       Accept: application/json
