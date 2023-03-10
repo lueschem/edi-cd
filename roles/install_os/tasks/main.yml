@@ -15,6 +15,17 @@
     msg: "Updating OS image from {{ reported_os_image }} to {{ desired_os_image }}."
   when: needs_os_update
 
+- name: Abort previous deployments.
+  ansible.builtin.uri:
+    url: "{{ mender_server }}/api/management/v1/deployments/deployments/devices/{{ inventory_hostname }}"
+    method: DELETE
+    headers:
+      Accept: application/json
+      Authorization: Bearer {{ mender_access_token }}
+    status_code: 204
+  delegate_to: 127.0.0.1
+  when: needs_os_update and playbook_mode == "run"
+
 - name: Apply OS update.
   ansible.builtin.uri:
     url: "{{ mender_server }}/api/management/v1/deployments/deployments"
