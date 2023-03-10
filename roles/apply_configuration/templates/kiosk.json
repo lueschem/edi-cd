@@ -2,5 +2,5 @@
   "kiosk_url": "{{ configuration.parameters.kiosk_url | mandatory }}",
   "playbook_url": "https://github.com/lueschem/kiosk-playbook",
   "playbook_version": "main",
-  "playbook_needs_reboot": "false"
+  "expected_os_image": "{{ desired_os_image }}"
 }
