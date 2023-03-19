@@ -4,12 +4,12 @@ subscribed_branch: production
 
 os_image:
   - device_type: pi2-armhf
-    image_name: 2023-03-11-2250-pi2-bookworm-armhf
+    image_name: 2023-03-19-1536-pi2-gitops-bookworm-armhf
   - device_type: pi3-arm64
     image_name: 2023-03-10-1104-pi3-gitops-bookworm-arm64
   - device_type: pi4-v3-arm64
     image_name: 2023-03-10-1348-pi4-gitops-bookworm-arm64
   - device_type: var-som-mx8m-nano-arm64-v2
-    image_name: 2023-02-10-1201-var-som-mx8m-nano-bullseye-arm64
+    image_name: 2023-03-18-0141-var-som-mx8m-nano-gitops-bookworm-arm64
   - device_type: iot-gate-imx8-arm64-v2
-    image_name: 2023-02-10-1236-iot-gate-imx8-bullseye-arm64
+    image_name: 2023-03-17-2259-iot-gate-imx8-gitops-bookworm-arm64
