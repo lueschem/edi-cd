@@ -4,4 +4,4 @@ subscribed_branch: develop
 configuration:
   template: kiosk.json
   parameters:
-    kiosk_url: https://docs.get-edi.io
+    kiosk_url: https://www.get-edi.io
