@@ -10,6 +10,7 @@ Without 2FA using username and password:
 export MENDER_USER=MY_MENDER_LOGIN
 export MENDER_PASSWORD=MY_MENDER_PASSWORD
 export RUNNER_ACCESS_TOKEN=ghp_XYZ
+export INFLUXDB_HTTP_TOKEN=ABCDE
 export PLAYBOOK_MODE=run # run=apply changes, dry-run=simulate changes (default), dry-run-debug=simulate changes and show debug information
 git checkout BRANCH_XY
 ansible-playbook manage-fleet.yml -i inventory.yml
@@ -20,6 +21,7 @@ By using a mender access token:
 ``` bash
 export MENDER_ACCESS_TOKEN=MY_MENDER_ACCESS_TOKEN
 export RUNNER_ACCESS_TOKEN=ghp_XYZ
+export INFLUXDB_HTTP_TOKEN=ABCDE
 export PLAYBOOK_MODE=run # run=apply changes, dry-run=simulate changes (default), dry-run-debug=simulate changes and show debug information
 git checkout BRANCH_XY
 ansible-playbook manage-fleet.yml -i inventory.yml

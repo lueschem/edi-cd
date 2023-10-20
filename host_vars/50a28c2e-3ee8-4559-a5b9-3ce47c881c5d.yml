@@ -1,7 +1,8 @@
 ---
 subscribed_branch: develop
 
-configuration:
-  template: kiosk.json
-  parameters:
-    kiosk_url: https://www.nzz.ch
+kiosk_enabled: true
+kiosk_kiosk_url: https://www.nzz.ch
+
+monitoring_enabled: true
+monitoring_influxdb_http_token: "{{ lookup('env', 'INFLUXDB_HTTP_TOKEN') }}"

@@ -1,9 +1,7 @@
 ---
 subscribed_branch: main
 
-configuration:
-  template: github-runner.json
-  parameters:
-    github_account: lueschem
-    github_repo: edi-ci
-    access_token: "{{ lookup('env', 'RUNNER_ACCESS_TOKEN') }}"
+gharunner_enabled: true
+gharunner_github_account: lueschem
+gharunner_github_repo: edi-ci
+gharunner_access_token: "{{ lookup('env', 'RUNNER_ACCESS_TOKEN') }}"

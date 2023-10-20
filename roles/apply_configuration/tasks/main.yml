@@ -1,8 +1,8 @@
 ---
 
-- name: Render desired configuration.
+- name: Render edge configuration.
   ansible.builtin.set_fact:
-    desired_configuration: "{{ lookup('template', configuration.template) }}"
+    desired_configuration: "{{ lookup('template', 'edge-configuration.json') }}"
 
 - name: Set fact for configuration update.
   ansible.builtin.set_fact:
@@ -10,7 +10,7 @@
 
 - name: Announce configuration upgrade.
   ansible.builtin.debug:
-    msg: "Applying template {{ configuration.template }}."
+    msg: "Applying new edge configuration."
   when: needs_configuration_update
 
 - name: Show detailed configuration change.

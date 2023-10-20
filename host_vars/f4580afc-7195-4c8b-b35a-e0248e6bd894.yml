@@ -1,7 +1,5 @@
 ---
 subscribed_branch: develop
 
-configuration:
-  template: kiosk.json
-  parameters:
-    kiosk_url: https://www.nzz.ch
+kiosk_enabled: true
+kiosk_kiosk_url: https://www.nzz.ch

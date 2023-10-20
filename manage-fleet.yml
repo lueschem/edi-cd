@@ -18,4 +18,4 @@
     - role: install_os
       when: subscribed_branch == applied_branch
     - role: apply_configuration
-      when: subscribed_branch == applied_branch and configuration.template is defined
+      when: subscribed_branch == applied_branch
