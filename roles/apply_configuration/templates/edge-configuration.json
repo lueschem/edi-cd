@@ -1,0 +1,22 @@
+{
+    "playbook_url": "{{ playbook_url | mandatory }}",
+    "playbook_version": "{{ playbook_version | mandatory }}",
+{% if monitoring_enabled is defined and monitoring_enabled %}
+    "monitoring_enabled": "true",
+    "monitoring_influxdb_server": "{{ monitoring_influxdb_server | mandatory }}",
+    "monitoring_influxdb_bucket": "{{ monitoring_influxdb_bucket | mandatory }}",
+    "monitoring_influxdb_http_token": "{{ (monitoring_influxdb_http_token if (monitoring_influxdb_http_token | length > 0)) | mandatory('The InfluxDB http token must not be empty!') }}",
+    "monitoring_influxdb_org": "{{ monitoring_influxdb_org | mandatory }}",
+{% endif %}
+{% if gharunner_enabled is defined and gharunner_enabled %}
+    "gharunner_enabled": "true",
+    "gharunner_github_account": "{{ gharunner_github_account | mandatory }}",
+    "gharunner_github_repo": "{{ gharunner_github_repo | mandatory }}",
+    "gharunner_access_token": "{{ (gharunner_access_token if (gharunner_access_token | length > 0)) | mandatory('The GitHub access token must not be empty!') }}",
+{% endif %}
+{% if kiosk_enabled is defined and kiosk_enabled %}
+    "kiosk_enabled": "true",
+    "kiosk_kiosk_url": "{{ kiosk_kiosk_url | mandatory }}",
+{% endif %}
+    "expected_os_image": "{{ desired_os_image }}"
+}

@@ -1,6 +1,12 @@
 ---
-mender_server: "https://hosted.mender.io"
+mender_server: https://hosted.mender.io
 subscribed_branch: production
+playbook_url: https://github.com/lueschem/edge-playbook.git
+playbook_version: 1.0.1
+
+monitoring_influxdb_server: eu-central-1-1.aws.cloud2.influxdata.com
+monitoring_influxdb_bucket: edge-bucket
+monitoring_influxdb_org: iot-demo-fleet
 
 os_image:
   - device_type: pi2-armhf
