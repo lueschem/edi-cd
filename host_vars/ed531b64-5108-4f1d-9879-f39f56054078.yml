@@ -1,2 +1,5 @@
 ---
 subscribed_branch: develop
+
+monitoring_enabled: true
+monitoring_influxdb_http_token: "{{ lookup('env', 'INFLUXDB_HTTP_TOKEN') }}"
