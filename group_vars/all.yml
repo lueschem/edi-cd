@@ -5,7 +5,7 @@ playbook_url: "https://github.com/lueschem/edge-playbook.git"
 playbook_version: "main"
 
 monitoring_influxdb_server: eu-central-1-1.aws.cloud2.influxdata.com
-monitoring_influxdb_bucket: demo-bucket
+monitoring_influxdb_bucket: edge-bucket
 monitoring_influxdb_org: iot-demo-fleet
 
 os_image:
