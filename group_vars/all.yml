@@ -10,12 +10,12 @@ monitoring_influxdb_org: iot-demo-fleet
 
 os_image:
   - device_type: pi2-armhf
-    image_name: 2023-03-19-1536-pi2-gitops-bookworm-armhf
+    image_name: 2023-10-20-1842-pi2-gitops-bookworm-armhf
   - device_type: pi3-arm64
-    image_name: 2023-03-10-1104-pi3-gitops-bookworm-arm64
+    image_name: 2023-10-20-1754-pi3-gitops-bookworm-arm64
   - device_type: pi4-v3-arm64
-    image_name: 2023-05-05-0846-pi4-gitops-bookworm-arm64
+    image_name: 2023-10-20-1707-pi4-gitops-bookworm-arm64
   - device_type: var-som-mx8m-nano-arm64-v2
-    image_name: 2023-05-05-0926-var-som-mx8m-nano-gitops-bookworm-arm64
+    image_name: 2023-10-20-1925-var-som-mx8m-nano-gitops-bookworm-arm64
   - device_type: iot-gate-imx8-arm64-v2
-    image_name: 2023-05-02-2127-iot-gate-imx8-gitops-bookworm-arm64
+    image_name: 2023-10-20-1628-iot-gate-imx8-gitops-bookworm-arm64
