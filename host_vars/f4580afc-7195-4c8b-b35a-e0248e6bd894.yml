@@ -1,4 +1,6 @@
 ---
+playbook_version: 1.2.3
+
 subscribed_branch: develop
 
 kiosk_enabled: true
