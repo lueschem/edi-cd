@@ -1,6 +1,8 @@
 ---
 subscribed_branch: develop
 
+playbook_version: 1.1.123
+
 kiosk_enabled: true
 kiosk_kiosk_url: https://docs.get-edi.io
 
