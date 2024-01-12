@@ -1,5 +1,8 @@
 all:
   children:
+    pi5:
+      hosts:
+        1747f8cc-cac8-43da-8375-a26e8cfb7214: # GitHub runner
     pi4:
       hosts:
         b8b311de-000e-4914-9a13-1d7e2e23bc5d: # GitHub runner
