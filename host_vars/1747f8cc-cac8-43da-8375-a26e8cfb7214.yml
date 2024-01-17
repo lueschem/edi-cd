@@ -5,6 +5,7 @@ gharunner_enabled: true
 gharunner_github_account: lueschem
 gharunner_github_repo: edi-ci
 gharunner_access_token: "{{ lookup('env', 'RUNNER_ACCESS_TOKEN') }}"
+gharunner_runner_labels: rpi5
 
 monitoring_enabled: true
 monitoring_influxdb_http_token: "{{ lookup('env', 'INFLUXDB_HTTP_TOKEN') }}"
