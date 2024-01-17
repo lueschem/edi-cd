@@ -20,4 +20,5 @@ os_image:
   - device_type: var-som-mx8m-nano-arm64-v2
     image_name: 2023-10-27-1244-var-som-mx8m-nano-gitops-bookworm-arm64
   - device_type: iot-gate-imx8-arm64-v2
-    image_name: 2023-10-27-1325-iot-gate-imx8-gitops-bookworm-arm64
+    image_name: 2024-01-16-2130-iot-gate-imx8-gitops-bookworm-arm64
+
