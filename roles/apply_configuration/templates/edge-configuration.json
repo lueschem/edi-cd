@@ -13,6 +13,7 @@
     "gharunner_github_account": "{{ gharunner_github_account | mandatory }}",
     "gharunner_github_repo": "{{ gharunner_github_repo | mandatory }}",
     "gharunner_access_token": "{{ (gharunner_access_token if (gharunner_access_token | length > 0)) | mandatory('The GitHub access token must not be empty!') }}",
+    "gharunner_runner_labels": "{{ gharunner_runner_labels | default('') }}",
 {% endif %}
 {% if kiosk_enabled is defined and kiosk_enabled %}
     "kiosk_enabled": "true",
