@@ -16,7 +16,7 @@ os_image:
   - device_type: pi4-v3-arm64
     image_name: 2024-01-19-1054-pi4-gitops-bookworm-arm64
   - device_type: pi5-v3-arm64
-    image_name: 2024-01-19-1322-pi5-gitops-bookworm-arm64
+    image_name: 2024-01-20-2157-pi5-gitops-bookworm-arm64
   - device_type: var-som-mx8m-nano-arm64-v2
     image_name: 2024-01-19-1043-var-som-mx8m-nano-gitops-bookworm-arm64
   - device_type: iot-gate-imx8-arm64-v2
