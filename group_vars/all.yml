@@ -2,7 +2,7 @@
 mender_server: https://hosted.mender.io
 subscribed_branch: production
 playbook_url: edge-playbook
-playbook_version: 1.4.3
+playbook_version: 1.4.4
 
 monitoring_influxdb_server: eu-central-1-1.aws.cloud2.influxdata.com
 monitoring_influxdb_bucket: edge-bucket
@@ -10,15 +10,15 @@ monitoring_influxdb_org: iot-demo-fleet
 
 os_image:
   - device_type: pi2-armhf
-    image_name: 2024-02-02-1703-pi2-gitops-bookworm-armhf
+    image_name: 2024-04-19-1553-pi2-gitops-bookworm-armhf
   - device_type: pi3-arm64
-    image_name: 2024-02-02-1642-pi3-gitops-bookworm-arm64
+    image_name: 2024-04-19-1545-pi3-gitops-bookworm-arm64
   - device_type: pi4-v3-arm64
-    image_name: 2024-02-02-1710-pi4-gitops-bookworm-arm64
+    image_name: 2024-04-19-2015-pi4-gitops-v2-bookworm-arm64
   - device_type: pi5-v3-arm64
     image_name: 2024-01-20-2157-pi5-gitops-bookworm-arm64
   - device_type: var-som-mx8m-nano-arm64-v2
-    image_name: 2024-02-02-1723-var-som-mx8m-nano-gitops-bookworm-arm64
+    image_name: 2024-04-19-1637-var-som-mx8m-nano-gitops-bookworm-arm64
   - device_type: iot-gate-imx8-arm64-v2
-    image_name: 2024-02-02-1658-iot-gate-imx8-gitops-bookworm-arm64
+    image_name: 2024-04-19-1531-iot-gate-imx8-gitops-bookworm-arm64
 
