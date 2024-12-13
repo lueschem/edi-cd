@@ -1,9 +1,14 @@
 ---
-subscribed_branch: main
+subscribed_branch: develop
+playbook_version: 1.6.0
 
 gharunner_enabled: true
 gharunner_github_account: lueschem
 gharunner_github_repo: edi-ci
 gharunner_access_token: "{{ lookup('env', 'RUNNER_ACCESS_TOKEN') }}"
 gharunner_runner_labels: rpi5
+
+os_image:
+  - device_type: pi5-v3-arm64
+    image_name: 2024-12-10-2214-pi5-gitops-trixie-arm64
 
