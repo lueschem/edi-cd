@@ -20,3 +20,6 @@ all:
     var_som_mx8m_nano:
       hosts:
         ed531b64-5108-4f1d-9879-f39f56054078:
+    cube:
+      hosts:
+        5a308daf-768d-4583-9175-a8d654ca121a:

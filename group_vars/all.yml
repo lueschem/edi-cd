@@ -21,4 +21,6 @@ os_image:
     image_name: 2024-12-09-1618-var-som-mx8m-nano-gitops-bookworm-arm64
   - device_type: iot-gate-imx8-arm64-v2
     image_name: 2024-12-09-1612-iot-gate-imx8-gitops-bookworm-arm64
+  - device_type: cube-imx8-dq-arm64-v2
+    image_name: 6.1.0_2025-01-15-1659_cb4-tse-qual
 
