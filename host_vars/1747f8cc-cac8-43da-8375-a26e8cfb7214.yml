@@ -1,6 +1,6 @@
 ---
 subscribed_branch: develop
-playbook_version: 1.6.1
+playbook_version: 1.6.2
 
 gharunner_enabled: true
 gharunner_github_account: lueschem
@@ -10,5 +10,5 @@ gharunner_runner_labels: rpi5
 
 os_image:
   - device_type: pi5-v3-arm64
-    image_name: 2024-12-13-1612-pi5-gitops-trixie-arm64
+    image_name: 2025-04-05-2112-pi5-gitops-trixie-arm64
 
