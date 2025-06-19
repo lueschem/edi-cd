@@ -10,11 +10,9 @@ jobs:
       - name: Check out the fleet management playbook
         uses: actions/checkout@v3
       - name: Install jmespath into venv of ansible-core
-        run: |
-          source /opt/pipx/venvs/ansible-core/bin/activate
-          python3 -m pip install jmespath
+        run: pipx inject ansible-core jmespath
       - name: Run the fleet management playbook
-        uses: dawidd6/action-ansible-playbook@v2
+        uses: dawidd6/action-ansible-playbook@v4
         with:
           playbook: manage-fleet.yml
           options: --inventory inventory.yml
