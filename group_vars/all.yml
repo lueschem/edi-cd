@@ -12,7 +12,7 @@ os_image:
   - device_type: pi2-armhf
     image_name: 2025-04-05-1035-pi2-gitops-bookworm-armhf
   - device_type: pi3-v3-arm64
-    image_name: 2025-06-04-0844-pi3-gitops-trixie-arm64
+    image_name: 2025-10-09-1716-pi3-gitops-trixie-arm64
   - device_type: pi4-v3-arm64
     image_name: 2025-04-05-0953-pi4-gitops-v2-bookworm-arm64
   - device_type: pi5-v3-arm64
@@ -22,5 +22,5 @@ os_image:
   - device_type: iot-gate-imx8-arm64-v2
     image_name: 2025-04-05-0954-iot-gate-imx8-gitops-bookworm-arm64
   - device_type: iot-din-imx8plus-arm64-v2
-    image_name: 2025-06-19-1159-iot-din-imx8plus-gitops-trixie-arm64
+    image_name: 2025-10-09-1650-iot-din-imx8plus-gitops-trixie-arm64
 
