@@ -2,7 +2,7 @@
 
 - name: Render edge configuration.
   ansible.builtin.set_fact:
-    desired_configuration: "{{ lookup('template', 'edge-configuration.json') }}"
+    desired_configuration: "{{ lookup('template', 'edge-configuration.json') | ansible.builtin.to_json(sort_keys=True) }}"
 
 - name: Set fact for configuration update.
   ansible.builtin.set_fact:
