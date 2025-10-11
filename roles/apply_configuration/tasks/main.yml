@@ -1,8 +1,14 @@
 ---
 
-- name: Render edge configuration.
+- name: Render edge configuration (new template handling).
+  ansible.builtin.set_fact:
+    desired_configuration: "{{ lookup('template', 'edge-configuration.json') | ansible.builtin.from_json | ansible.builtin.to_json(sort_keys=True) | ansible.builtin.from_json }}"
+  when: ansible_version.full is version('2.19', '>=')
+
+- name: Render edge configuration (old template handling).
   ansible.builtin.set_fact:
     desired_configuration: "{{ lookup('template', 'edge-configuration.json') | ansible.builtin.to_json(sort_keys=True) | ansible.builtin.from_json }}"
+  when: ansible_version.full is version('2.19', '<')
 
 - name: Set fact for configuration update.
   ansible.builtin.set_fact:
