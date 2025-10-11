@@ -1,6 +1,6 @@
 ---
 subscribed_branch: develop
-playbook_version: 1.6.4
+playbook_version: 1.6.5
 
 gharunner_enabled: true
 gharunner_github_account: lueschem
