@@ -23,4 +23,6 @@ os_image:
     image_name: 2025-10-10-1007-iot-gate-imx8-gitops-bookworm-arm64
   - device_type: iot-din-imx8plus-arm64-v2
     image_name: 2025-10-09-1650-iot-din-imx8plus-gitops-trixie-arm64
+  - device_type: iot-gate-imx8plus-arm64-v2
+    image_name: 2026-03-13-1538-iot-gate-imx8plus-gitops-trixie-arm64
 
