@@ -1,6 +1,3 @@
 ---
 subscribed_branch: develop
 
-kiosk_enabled: true
-kiosk_kiosk_url: https://www.get-edi.io
-
